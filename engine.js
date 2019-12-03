@@ -87,7 +87,7 @@ module.exports = function (options) {
         var head = (answers.type.emoji + ' ' + answers.type.name + scope + ': ' + answers.subject.trim()).slice(0, maxLineWidth);
 
         // Wrap these lines at 100 characters
-        var body = wrap(answers.body, wrapOptions);
+        var body = wrap(answers.body || '', wrapOptions);
 
         // Apply breaking change prefix, removing it if already present
         var breaking = answers.breaking ? answers.breaking.trim() : '';
